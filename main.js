@@ -1,3 +1,4 @@
+//Selecting HTML Elements
 const search = document.getElementById("search"),
   submit = document.getElementById("submit"),
   random = document.getElementById("random"),
@@ -9,13 +10,13 @@ const search = document.getElementById("search"),
 function searchMeal(e) {
   e.preventDefault();
 
-  //clear single meal
+  //Clear single meal
   single_mealEl.innerHTML = "";
 
   //Get search term
   const term = search.value;
 
-  // check term
+  // Check term
   if (!term.trim()) alert("Please enter a meal");
   else {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
@@ -24,7 +25,7 @@ function searchMeal(e) {
         console.log(data);
         resultHeading.innerHTML = `<h2> Search Results for: '${term}' </h2>`;
 
-        // the condition if theres no meal or if there's one
+        // The condition if theres a meal
         if (data.meals == null) {
           resultHeading.innerHTML = `<p> There are no matching search results. Try different search </p>`;
         } else {
@@ -45,7 +46,7 @@ function searchMeal(e) {
         search.value = "";
       });
   }
-  console.log(term);
+  
 }
 
 // Fetch Meal by ID
@@ -104,17 +105,18 @@ function addMealToDom(meal) {
   `;
 }
 
-// Event Listner
+// Event Listners
 submit.addEventListener("submit", searchMeal);
 random.addEventListener("click", getRandomMeal);
 mealsEl.addEventListener("click", (e) => {
-  //console.log(e.target);
+  
+  // Refactored code to get the mealInfo Attribute
   const mealInfo = e.target;
   if (mealInfo.classList.contains("meal-info")) {
     const mealID = mealInfo.getAttribute("data-mealid");
     getMealById(mealID);
   }
-
+    // Another method to get the mealInfo Attribute using path.find()
   /*  const mealInfo = e.path.find((item) => {
     if (item.classList) {
       return item.classList.contains("meal-info");
@@ -122,5 +124,5 @@ mealsEl.addEventListener("click", (e) => {
       return false;
     }
   }); */
-  //console.log(mealInfo);
+  
 });
