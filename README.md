@@ -16,7 +16,7 @@ This was the first time attempting to work with APIs. I decided to make this pro
 
 
 
-The main purpose of **MealFinder** was for personal use so making it pretty was not a priority back then. 
+The main purpose of **MealFinder** was for personal use, so making it pretty was not a priority back then. 
 
 ## Features and Remarks
 - Random button to get a random meal
