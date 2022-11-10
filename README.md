@@ -30,3 +30,5 @@ The main purpose of **MealFinder** was for personal use, so making it pretty was
 ## Future Improvements
 - Improve the user interface
 - Allow users to mark their favourite meals for future reference
+- Use reactJs instead of vanilla JS for scalability and sustainability
+- Enhance multiple devices responsiveness
